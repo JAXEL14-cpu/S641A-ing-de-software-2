@@ -12,14 +12,16 @@ public class Reader {
 
     public void parseInput(){
         switch (element) {
-            case "LLINE":
+            case "LINE":
                 converter.makeLine();
                 break;
 
-            case "PRAGRAPH":
+            case "PARAGRAPH":
                converter.makeParagraph();
                break;
-            case "TABLE"
+            case "TABLE":
+                converter.makeTable();
+                break;
             default:
                 break;
         }
