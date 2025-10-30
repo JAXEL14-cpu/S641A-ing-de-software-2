@@ -1,0 +1,25 @@
+1. Contexto del Problema
+
+Una empresa de seguros vehiculares ofrece pólizas básicas que los clientes pueden 
+personalizar agregando coberturas adicionales, como:
+
+-Daños a terceros
+-Robo total
+-Asistencia en carretera
+-Desastres naturales
+
+Cada cobertura aumenta el costo y la descripción del seguro.
+Sin el uso del patrón Decorador, sería necesario crear muchas clases para cada combinación de coberturas,
+lo que complicaría el mantenimiento y la escalabilidad del sistema.
+
+2. Solución Propuesta: Patrón Decorador
+
+Para evitar la creación de múltiples subclases y facilitar la extensión dinámica, se aplica el Patrón de Diseño Decorador.
+Este patrón permite agregar funcionalidades adicionales a un objeto sin modificar su estructura original.
+
+La solución se organiza así:
+
+-Seguro (abstracta): define la interfaz común (getDescripcion() y getCosto()).
+-SeguroBasico y SeguroPremium: representan los seguros base.
+-Decoradores (Robo, Terceros, Asistencia, Desastres): amplían dinámicamente la funcionalidad del seguro, 
+añadiendo nuevas coberturas y modificando su descripción y costo.
