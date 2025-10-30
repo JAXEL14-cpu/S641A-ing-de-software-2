@@ -9,12 +9,10 @@ public class CoberturaDesastres extends SeguroDecorador {
         this.seguro = seguro;
     }
 
-    @Override
     public String getDescripcion() {
         return seguro.getDescripcion() + ", Desastres Naturales";
     }
 
-    @Override
     public double getCosto() {
         return seguro.getCosto() + 35000;
     }

@@ -8,12 +8,10 @@ public class AsistenciaCarretera extends SeguroDecorador {
         this.seguro = seguro;
     }
 
-    @Override
     public String getDescripcion() {
         return seguro.getDescripcion() + ", Asistencia en Carretera";
     }
 
-    @Override
     public double getCosto() {
         return seguro.getCosto() + 15000;
     }
