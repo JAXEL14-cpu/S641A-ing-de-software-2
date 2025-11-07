@@ -1,0 +1,31 @@
+1.Una empresa de seguros ofrece distintos tipos de pólizas y promociones.
+Cada vez que la empresa lanza una nueva cobertura, actualiza precios, o modifica las condiciones de sus pólizas, 
+debe notificar a sus clientes y agentes de manera inmediata.
+
+
+La empresa necesita un sistema que:
+
+Permita que los clientes y agentes se suscriban voluntariamente para recibir notificaciones.
+
+Envíe automáticamente una alerta cuando se actualice alguna información del seguro.
+
+No dependa de qué tipo de observador esté conectado (cliente, agente, etc.), sino que sea extensible.
+
+2. Este patrón define una relación uno a muchos, donde un objeto Sujeto (Observable)
+notifica automáticamente a todos los Observadores suscritos cuando ocurre un cambio.
+
+Sujeto (interface) → Define métodos para registrar, eliminar y notificar observadores.
+
+Observador (interface) - Define el método actualizar() que será llamado por el sujeto.
+
+SeguroNotificador (clase concreta del Sujeto)- Gestiona la lista de observadores y envía notificaciones.
+
+Cliente y AgenteSeguro (observadores concretos) - Reciben los mensajes y los muestran al usuario.
+
+Con este patrón:
+
+Se logra desacoplar la fuente de datos (notificador) de los receptores (clientes, agentes).
+
+Se facilita la extensión del sistema (pueden crearse más tipos de observadores sin modificar el núcleo).
+
+Se mejora la reutilización y escalabilidad del código.
